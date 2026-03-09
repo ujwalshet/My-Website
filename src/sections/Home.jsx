@@ -119,7 +119,7 @@ animate={{opacity:1 , y:0}}
 transition={{duration:1}}
 >
 
-Hello I'm
+Hello, I'm
 <br/>
 
 <span className="text-white font-bold text-5xl sm:text-5xl md:text-6xl lg:text-7xl whitespace-nowrap">
