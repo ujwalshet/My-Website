@@ -32,28 +32,28 @@ export default function Projects() {
   const sceneRef = useRef(null);
 
   const projects = useMemo(() => [
-    {
-      title: "On-Prem to AWS Cloud Migration",
-      bgColor: "#8d4dd3",
-      image: isMobile ? photo1 : img1,
-      description:
-        "Migrated on-premises infrastructure to AWS cloud improving scalability, reliability and operational efficiency using EC2, VPC and automated deployment strategies."
-    },
-    {
-      title: "Automated Patch Management using AWS SSM",
-      bgColor: "#38a4d3",
-      image: isMobile ? photo2 : img2,
-      description:
-        "Built an automated patch management solution using AWS Systems Manager to schedule patching, enforce compliance and maintain secure EC2 environments."
-    },
-    {
-      title: "AWS Serverless Monitoring",
-      bgColor: "#dc9117",
-      image: isMobile ? photo3 : img3,
-      description:
-        "Implemented serverless EC2 monitoring using AWS Lambda, CloudWatch and SNS to detect failures and automatically send real-time alert notifications."
-    }
-  ], [isMobile]);
+  {
+    title: "On-Prem to AWS Cloud Migration",
+    bgColor: "#8d4dd3",
+    image: img1,
+    description:
+      "Migrated on-premises infrastructure to AWS cloud improving scalability, reliability and operational efficiency using EC2, VPC and automated deployment strategies."
+  },
+  {
+    title: "Automated Patch Management using AWS SSM",
+    bgColor: "#38a4d3",
+    image: img2,
+    description:
+      "Built an automated patch management solution using AWS Systems Manager to schedule patching, enforce compliance and maintain secure EC2 environments."
+  },
+  {
+    title: "AWS Serverless Monitoring",
+    bgColor: "#dc9117",
+    image: img3,
+    description:
+      "Implemented serverless EC2 monitoring using AWS Lambda, CloudWatch and SNS to detect failures and automatically send real-time alert notifications."
+  }
+], []);
 
   const { scrollYProgress } = useScroll({
     target: sceneRef,
@@ -90,11 +90,11 @@ transition: "background-color 400ms ease"
   initial={{ opacity: 0, y: -60 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.7 }}
-  className={`z-10 text-center font-bold tracking-widest text-white
+  className={`z-10 text-center font-bold tracking-wide text-white
   ${isMobile ? "text-4xl mt-6" : "text-6xl mt-10"}
-  drop-shadow-[0_0_25px_rgba(255,255,255,0.7)]`}
+  drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]`}
 >
-  MY WORK
+  My Work
 </motion.h2>
 
 <div className="relative w-full flex-1 flex items-center justify-center">

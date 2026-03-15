@@ -7,7 +7,7 @@ import Contact from "./sections/Contact";
 import Experience from "./sections/Experience";
 import Footer from "./sections/Footer";
 import Projects from "./sections/Projects";
-// import ParticleBackground from "./components/ParticleBackground";
+import ParticleBackground from "./components/ParticleBackground";
 import CustomCursor from "./components/CustomCursor";
 import IntroAnimations from "./components/IntroAnimations";
 import React from "react";
@@ -21,7 +21,7 @@ export default function App(){
       {introDone && (
         <div className= "relative gradient text-white">
             <CustomCursor/>
-            {/* <ParticleBackground/> */}
+            <ParticleBackground/>
             <Navbar/>
             <Home/>
             <About/>
