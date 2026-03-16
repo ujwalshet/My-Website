@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import P from "../assets/P.png";
 
-// ─── Typing hook ───────────────────────────────────────────────────────────────
 function useTyping(lines, speed = 45) {
   const [displayed, setDisplayed] = useState([]);
   const [lineIdx, setLineIdx] = useState(0);
@@ -10,7 +9,8 @@ function useTyping(lines, speed = 45) {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    if (lineIdx >= lines.length) { setDone(true); return; }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (lineIdx >= lines.length) { setDone (true); return; }
     if (charIdx <= lines[lineIdx].length) {
       const t = setTimeout(() => {
         setDisplayed(prev => {
@@ -30,7 +30,6 @@ function useTyping(lines, speed = 45) {
   return { displayed, done };
 }
 
-// ─── Particle canvas ──────────────────────────────────────────────────────────
 function ParticleField() {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -95,7 +94,7 @@ function ParticleField() {
   return <canvas ref={canvasRef} style={{ position:"absolute", inset:0, width:"100%", height:"100%", pointerEvents:"none", opacity:0.6 }} />;
 }
 
-// ─── Animated counter ─────────────────────────────────────────────────────────
+
 function Counter({ to, suffix = "", duration = 1800 }) {
   const [val, setVal] = useState(0);
   const ref = useRef(null);
@@ -125,7 +124,6 @@ function Counter({ to, suffix = "", duration = 1800 }) {
   return <span ref={ref}>{val}{suffix}</span>;
 }
 
-// ─── Skill pill ───────────────────────────────────────────────────────────────
 const skills = [
   { name: "AWS EC2",      color: "#fb923c" },
   { name: "VPC",          color: "#a78bfa" },
@@ -141,21 +139,21 @@ const skills = [
   { name: "Monitoring",   color: "#facc15" },
 ];
 
-// ─── Terminal lines ────────────────────────────────────────────────────────────
+
 const TERMINAL_LINES = [
   "$ whoami",
   "> Ujwal Shet — AWS Cloud Engineer",
   "$ cat skills.txt",
   "> EC2 · VPC · IAM · S3 · Lambda · CloudWatch",
   "$ uptime",
-  "> 3+ years building scalable cloud infrastructure",
+  "> 2+ years building scalable cloud infrastructure",
   "$ status",
   "> ✓ Available for new opportunities",
 ];
 
-// ─── Main component ────────────────────────────────────────────────────────────
+
 export default function About() {
-  // 3D tilt for avatar
+  
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const rotX = useSpring(useTransform(my, [-0.5, 0.5], [14, -14]), { stiffness: 280, damping: 22 });
@@ -516,7 +514,7 @@ export default function About() {
               {/* Stats row */}
               <div style={{ display:"flex", flexWrap:"wrap", gap:"0.75rem", marginTop:"1.5rem" }}>
                 {[
-                  { num:3, suffix:"+", label:"Years Exp", color:"#a78bfa" },
+                  { num:2, suffix:"+", label:"Years Exp", color:"#a78bfa" },
                   { num:8, suffix:"",  label:"Certs", color:"#38bdf8" },
                   { num:10, suffix:"+", label:"AWS Services", color:"#34d399" },
                 ].map((s, i) => (

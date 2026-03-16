@@ -316,8 +316,8 @@ export default function Skills() {
         >
           {[
             { num:'15+',  label:'Skills Mastered', color:'#a78bfa' },
-            { num:'8',    label:'AWS Services',    color:'#38bdf8' },
-            { num:'3+',   label:'Years Hands-on',  color:'#34d399' },
+            { num:'10+',    label:'AWS Services',    color:'#38bdf8' },
+            { num:'2+',   label:'Years Hands-on',  color:'#34d399' },
             { num:'100%', label:'Cloud-focused',   color:'#fb923c' },
           ].map((s) => (
             <motion.div
