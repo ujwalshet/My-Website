@@ -21,7 +21,7 @@ const TERMINAL_SESSION = [
   { prompt:"$", text:"aws s3 ls s3://ujwal-portfolio-assets",         color:"#38bdf8", pause:600  },
   { prompt:">", text:"2024-01-15  about.md  projects/  certs/",       color:"#facc15", pause:400  },
   { prompt:"$", text:"uptime",                                        color:"#38bdf8", pause:500  },
-  { prompt:">", text:"3+ years building cloud at scale",              color:"#34d399", pause:400  },
+  { prompt:">", text:"2+ years building cloud at scale",              color:"#34d399", pause:400  },
   { prompt:"$", text:"cat status.txt",                                color:"#38bdf8", pause:500  },
   { prompt:">", text:"● Available for opportunities",                 color:"#34d399", pause:800  },
   { prompt:"$", text:"_",                                             color:"#38bdf8", pause:99999},

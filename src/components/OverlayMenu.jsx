@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -53,11 +54,11 @@ function HudCorners() {
   );
 }
 
-// ── Particle field ────────────────────────────────────────────────────────────
 function Particles({ count = 40 }) {
   const particles = useRef(
     Array.from({ length: count }, (_, i) => ({
       id: i,
+      // eslint-disable-next-line react-hooks/purity
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: 1 + Math.random() * 2,
@@ -85,7 +86,7 @@ function Particles({ count = 40 }) {
   );
 }
 
-// ── Menu item row ─────────────────────────────────────────────────────────────
+
 function MenuItem({ item, index, onClose, isHovered, onHover, onLeave }) {
   return (
     <motion.li
@@ -205,7 +206,6 @@ function hexToRgb(hex) {
   return `${r},${g},${b}`;
 }
 
-// ── Main ──────────────────────────────────────────────────────────────────────
 export default function OverlayMenu({ isOpen, onClose }) {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [time, setTime] = useState("");
